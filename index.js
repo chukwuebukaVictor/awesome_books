@@ -70,4 +70,12 @@
  });
  
  
- 
+ window.onload = () => {
+  if (localStorage.getItem("data") === null) {
+    populateDom(Book.books);
+  } else {
+    const localBooks = JSON.parse(localStorage.getItem("data"));
+    populateDom(localBooks);
+    Book.books = localBooks;
+  }
+};
