@@ -35,6 +35,14 @@
    addEvents();
  }
  
+ function nav(element, link) {
+  document.querySelector(".show").className = "hidden";
+  document.querySelector(element).className = "show";
+  document.querySelectorAll("a").forEach((item) => {
+    item.className = "";
+  });
+  link.className = "active";
+}
  
  // get input from form and call addToBooks method
  
@@ -54,5 +62,12 @@
  addBtn.addEventListener("click", addNewBook);
 
 
+ document.querySelectorAll("a").forEach((item) => {
+   const ref = item.getAttribute("href");
+   item.addEventListener("click", () => {
+     nav(ref, item);
+   });
+ });
+ 
  
  
