@@ -1,4 +1,5 @@
- import {Book} from './addbook.js'
+ import {Book} from './addBook.js'
+//  import {dateTime} from './node_modules/luxon/src/luxon.js';
 
  let removeBtn = document.querySelectorAll(".remove");
 
@@ -68,7 +69,14 @@
      nav(ref, item);
    });
  });
- 
+
+ const time = document.querySelector('.date');
+
+ const currentDate = luxon.DateTime.local().toLocaleString(
+  luxon.DateTime.DATETIME_FULL,
+  ); 
+  time.innerHTML = currentDate;
+
  
  window.onload = () => {
   if (localStorage.getItem("data") === null) {
