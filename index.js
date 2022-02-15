@@ -2,7 +2,7 @@ import Book from './modules/addBook.js';
 
 let removeBtn = document.querySelectorAll('.remove');
 
-function addEvents() {
+const addEvents = () => {
   removeBtn.forEach((element) => {
     element.addEventListener('click', (e) => {
       const ref = e.target.id;
@@ -10,13 +10,13 @@ function addEvents() {
       e.target.parentElement.remove();
     });
   });
-}
+};
 
 // populate dom with the list
 
 const addBtn = document.querySelector('#add-btn');
 
-function populateDom(list) {
+const populateDom = (list) => {
   const booksListDiv = document.querySelector('#books-list');
   for (let i = 0; i < list.length; i += 1) {
     const div = document.createElement('div');
@@ -33,20 +33,20 @@ function populateDom(list) {
   }
   removeBtn = document.querySelectorAll('.remove');
   addEvents();
-}
+};
 
-function nav(element, link) {
+const nav = (element, link) => {
   document.querySelector('.show').className = 'hidden';
   document.querySelector(element).className = 'show';
   document.querySelectorAll('a').forEach((item) => {
     item.className = '';
   });
   link.className = 'active';
-}
+};
 
 // get input from form and call addToBooks method
 
-function addNewBook() {
+const addNewBook = () => {
   const bookTitle = document.querySelector('#title').value;
   const bookAuthor = document.querySelector('#author').value;
   if (bookTitle && bookAuthor) {
@@ -57,7 +57,7 @@ function addNewBook() {
     const listLink = document.querySelector('#list-link');
     nav('#books', listLink);
   }
-}
+};
 
 addBtn.addEventListener('click', addNewBook);
 
