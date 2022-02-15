@@ -30,5 +30,6 @@ To get a local copy up and running follow these simple example steps.
 - Clone repo on your local device using `git clone <link>` command
 
 ## Authors
-
 👤 **Chukwuebuka Victor Ozoede**
+
+- GitHub: [@githubhandle](https://github.com/chukwuebukaVictor)
